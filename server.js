@@ -57,6 +57,7 @@ const wss    = new WebSocket.Server({ server });
 
 app.use(express.json({ limit: '15mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname, { index: false }));
 
 // ─── 文件上传（背景图）────────────────────────────────────
 const uploadDir = path.join(__dirname, 'public', 'uploads');
